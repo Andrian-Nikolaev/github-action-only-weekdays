@@ -1,0 +1,20 @@
+name: Week Day Check  # Name of workflow
+on: [pull_request]     # Trigger condition
+jobs:     
+  check-day:           # Name of job
+    runs-on: ubuntu-latest               # Environment of the runner, where the job is going to be executed
+    steps:
+      - name: Check out repository code  # Clone this github repository on the runner's filesystem
+        uses: actions/checkout@v2
+
+      - name: Set up Java                # Ubuntu does not have Java preinstalled, so it needs to be added
+        uses: actions/setup-java@v4
+        with: 
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Compile Java file          # Java source files need to be compiled into .class to be executed
+        run: javac DayOfWeekCheck.java         # javac - Java Compiler. Turns the .java file (human-readable) into a .class file (machine-readable)
+
+      - name: Run day of week check             # Executed logic from the DayCheck.java file
+        run: java DayOfWeekCheck

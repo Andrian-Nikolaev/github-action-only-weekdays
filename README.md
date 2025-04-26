@@ -1,1 +1,3 @@
-# github-action-only-weekdays
+# GitHub Action - Allow PR Only During Weekdays
+
+This repo has code to implement a GitHubAction, triggered on a Pull Request (PR). The logic implemented in the DayOfWeekCheck.java file is to get the current day of the week (Monday - Sunday) and make a condition that passes only if is a weekday (Monday to Friday) and fails if it is during the weekend. This logic is then implemented in the weekday-check.yaml to allow Pull Requests to be completed only during weekdays.
