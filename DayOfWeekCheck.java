@@ -10,7 +10,7 @@ public class DayOfWeekCheck {
             System.out.println("Today is " + today + ". Failing as it is a weekend.");
             System.exit(1); // Fail
         } else {
-            System.out.println("Today is " + today + ". Passing as it is a weekday.");
+            System.out.println("Today is " + today + ". Passing as it is a weekday ...");
             System.exit(0); // Success
         }
     }
